@@ -30,14 +30,6 @@ jcenter()
                     groupId 'group'
                     artifactId project.name
                     version '1.4.0'
-
-                      /*
-                       Disabling "from components.java" means that the
-                       publishMavenJavaPublicationToMavenLocal
-                       task is available on all modules but the jar
-                       is not published :(
-                     */
-
                     from components.java
 
                 }
