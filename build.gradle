@@ -13,7 +13,35 @@ buildscript {
 }
 
 allprojects {
-    repositories {
-        jcenter()
+plugins.withType(JavaPlugin).whenPluginAdded {
+        repositories {
+jcenter()
+            mavenLocal()
+            mavenCentral()
+        }
+
+        //Allows deploying to local repo
+        project.plugins.apply('maven-publish')
+
+        publishing {
+            publications {
+                mavenJava(MavenPublication) {
+
+                    groupId 'group'
+                    artifactId project.name
+                    version '1.4.0'
+
+                      /*
+                       Disabling "from components.java" means that the
+                       publishMavenJavaPublicationToMavenLocal
+                       task is available on all modules but the jar
+                       is not published :(
+                     */
+
+                    from components.java
+
+                }
+            }
+        }
     }
 }
