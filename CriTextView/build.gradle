@@ -1,4 +1,31 @@
 apply plugin: 'com.android.library'
+
+
+ext {
+
+    bintrayRepo = 'android'
+    bintrayName = 'textviewclickable'
+
+    publishedGroupId = 'com.github.kuttahaitu'
+    libraryName = 'clickabletv'
+    artifact = 'clickabletv'
+
+    libraryDescription = 'Simple, android textview with specific word click action'
+
+    siteUrl = 'https://github.com/kuttahaitu'
+    gitUrl = 'https://github.com/kuttahaitu/textview-clickable.git'
+
+    libraryVersion = '1.4.0'
+    organization = 'cribintray' // if you push to organization's repository.
+    developerId = 'cri'
+    developerName = 'Matrix Cri'
+    developerEmail = 'cyberpunks.dev@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+
+}
 android {
     compileSdkVersion 29
 
